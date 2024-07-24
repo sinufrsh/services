@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Rent</title>
+    <link rel="stylesheet" href="homestyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav container">
+            <a href="index.html" class="logo"><i class='bx bx-home'></i>Ghar</a>
+            <input type="checkbox" name="" id="menu">
+            <label for="menu" <i class="bx bx-menu" id="menu-icon"></i></label>
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#properties">properties</a></li>
+
+
+            </ul>
+
+            <a href="#search" class="btn" >Find Now</a>
+        </div>
+    </header>
+
+    
+    <section class="home container" id="home">
+        <div class="home-images">
+            <div class="slide"></div>
+            <div class="slide"></div>
+            <div class="slide"></div>
+        </div>
+        <div class="home-text">
+            <h1>Find Your Next <br>Perfect Place To <br>Live.</h1>
+            <!-- <a href="#" class="btn">Sign Up</a> -->
+        </div>
+    </section>
+    
+
+    <section class="about container" id="about">
+        <div class="about-img">
+            <img src="serviceimg/homerent/about.jpg" alt="">
+
+        </div>
+        <div class="about-text">
+            <span>About Us</span>
+            <h2>We Give The Best <br> Property For You !</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, non soluta quae beatae odio vel
+                laudantium at cupiditate molestiae ex, assumenda maxime quis, ducimus dicta voluptas. Sapiente quisquam
+                tempore veritatis vero unde!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, et!</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </section>
+
+
+
+    <section class="upload-home container">
+        <h2>Upload Home Details</h2>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="home-image">Upload Home Image:</label>
+                <input type="file" id="home-image" name="home-image" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="home-title">Home Title:</label>
+                <input type="text" id="home-title" name="home-title" required>
+            </div>
+            <div class="form-group">
+                <label for="home-location">Location:</label>
+                <input type="text" id="home-location" name="home-location" required>
+            </div>
+            <div class="form-group">
+                <label for="bedrooms">Number of Bedrooms:</label>
+                <input type="number" id="bedrooms" name="bedrooms" required>
+            </div>
+            <div class="form-group">
+                <label for="bathrooms">Number of Bathrooms:</label>
+                <input type="number" id="bathrooms" name="bathrooms" required>
+            </div>
+            <div class="form-group">
+                <label for="rent">Monthly Rent:</label>
+                <input type="text" id="rent" name="rent" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Upload</button>
+        </form>
+    </section>
+
+
+
+
+    <section class="sales container" id="sales">
+        <div class="box">
+            <i class="bx bx-user"></i>
+            <h3>Make Your Dream True</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, aliquam?</p>
+        </div>
+
+        <div class="box">
+            <i class="bx bx-desktop"></i>
+            <h3>Start Your Membership</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, aliquam?</p>
+        </div>
+        <div class="box">
+            <i class="bx bx-home-alt"></i>
+            <h3>Enjoy Your New Home</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, aliquam?</p>
+        </div>
+    </section>
+
+    <section class="properties container" id="properties">
+        <div class="heading">
+            <span>recent</span>
+            <h2>Our Featured Properties</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>Ad quidem consequatur ipsum ab rem nihil
+                iusto facere eius dicta quasi!</p>
+        </div>
+        <div class="properties-container container">
+            <div class="box">
+                <img src="serviceimg/homerent/1sthome.jpg" alt="">
+                <h3>$10,999/month</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3>The villa</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-bed'><span>5 Bedroom</span></i>
+                        <br>
+                        <div class="bx bx-bath"><span>3 bathroom</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="serviceimg/homerent/2ndhome.jpg" alt="">
+                <h3>$10,999/month</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3> PG Hostel</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-bed'><span>5 Bedroom</span></i>
+                        <br>
+                        <div class="bx bx-bath"><span>3 bathroom</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="serviceimg/homerent/3rdhome.jpg" alt="">
+                <h3>$10,999/month</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3> PG Hostel</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-bed'><span>5 Bedroom</span></i>
+                        <br>
+                        <div class="bx bx-bath"><span>3 bathroom</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="serviceimg/homerent/4thhome.jpg" alt="">
+                <h3>$10,999/month</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3> PG Hostel</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-bed'><span>5 Bedroom</span></i>
+                        <br>
+                        <div class="bx bx-bath"><span>3 bathroom</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="serviceimg/homerent/5thhome.jpg" alt="">
+                <h3>$10,999/month</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3> PG Hostel</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-bed'><span>5 Bedroom</span></i>
+                        <br>
+                        <div class="bx bx-bath"><span>3 bathroom</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="serviceimg/homerent/6thhome.jpg" alt="">
+                <h3>$10,999/month</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3> PG Hostel</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-bed'><span>5 Bedroom</span></i>
+                        <br>
+                        <div class="bx bx-bath"><span>3 bathroom</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="container1" id="search">
+        <h1>Find Your Dream Home</h1>
+        <form action="#" method="POST">
+            <div class="form-group1">
+                <label for="room-type1">Room Type:</label>
+                <select id="room-type1" name="room-type1">
+                    <option value="1BHK">1 BHK</option>
+                    <option value="2BHK">2 BHK</option>
+                    <option value="3BHK">3 BHK</option>
+                    <option value="4BHK">4 BHK</option>
+                    <option value="Villa">Villa</option>
+                </select>
+            </div>
+            <div class="form-group1">
+                <label for="rent-amount">Rent Amount (per month):</label>
+                <input type="number" id="rent-amount" name="rent-amount" placeholder="Enter rent amount">
+            </div>
+            <div class="form-group1">
+                <label for="bathrooms">Number of Bathrooms:</label>
+                <input type="number" id="bathrooms" name="bathrooms" placeholder="Enter number of bathrooms">
+            </div>
+            <div class="form-group1">
+                <label for="bedrooms1">Number of Bedrooms:</label>
+                <input type="number" id="bedrooms1" name="bedrooms1" placeholder="Enter number of bedrooms">
+            </div>
+            <div class="search-label">
+                <p>Search for the best place</p>
+            </div>
+            <div class="form-group1 search">
+                <input type="text" id="searchInput" name="search" placeholder="enter  location...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+    </div>
+
+    <section class="newsletter container">
+        <!-- <h2>Search For Best Place!</h2>
+        <form action="">
+            <input type="text" class="search-field location" placeholder="location">
+            <input type="submit" value="search" class="btn">
+        </form> -->
+        <h2>Have Question in Mind?<br>Connect To us</h2>
+        <form action="">
+            <input type="email" name="" id="email-box" placeholder="yourmail@gmail.com" required>
+            <input type="submit" value="send" class="btn">
+        </form>
+        <h2>contact us <span><i class='bx bxs-phone'></i></span>:+91 85455 56523/+91 45623 45897</h2>
+    </section>
+
+
+    <script>
+          document.addEventListener("DOMContentLoaded", function () {
+        // Sample place names
+        var places = ["brahmapur", "BBSR", "CTC", "KHORDA", "KDP"];
+        // Select the search input
+        var searchInput = document.getElementById("searchInput");
+    
+        // Function to update the placeholder with a random place name
+        function updatePlaceholder() {
+            searchInput.placeholder = 'Search for location... "' + places[Math.floor(Math.random() * places.length)] + '"';
+        }
+    
+        // Initial call to update placeholder
+        updatePlaceholder();
+    
+        // Set interval to update placeholder every 5 seconds
+        setInterval(updatePlaceholder, 1000);
+    });
+
+   
+    </script>
+</body>
+
+</html>

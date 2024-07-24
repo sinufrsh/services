@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>burhumpur services</title>
+    <link rel="stylesheet" href="indexstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+
+
+
+
+    <section id="header">
+        <a href="#"><img width="150" src="logo.png" class="logo" alt=""></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="login.html">login</a></li>
+                <li><a href="blog.html">blog</a></li>
+                <li><a href="aboutus.html">about</a></li>
+                <li><a href="contact.html">contact</a></li>
+
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div class="mobile">
+            <!-- <a href="cart.html"><i class="far fa-shopping-bag"></i></a> -->
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <div class="space">
+        <h4>#OUR <span>SERVICES</span></h4>
+        <button>We are here for your better life</button>
+        <div class="image-slider">
+            <img src="bgimg/b1.jpg" alt="Image 1">
+            <img src="bgimg/service1.jpg" alt="Image 2">
+            <img src="bgimg/service3.jpg" alt="Image 3">
+            <img src="bgimg/service2.jpg" alt="Image 3">
+        </div>
+    </div>
+
+
+    <section id="feature" class="section-p1">
+        <div class="feature-box" onclick="window.location.href='Education.html'">
+            <img width="200px" src="serviceimg/edu.jpg">
+            <h6>Education</h6>
+        </div>
+        <div class="feature-box" onclick="window.location.href='food.html'">
+            <img width="200px" src="serviceimg/food.jpg">
+            <h6>Food Near Me</h6>
+        </div>
+        <div class="feature-box" onclick="window.location.href='homerent.html'">
+            <img width="200px" src="serviceimg/rent.jpg">
+            <h6>Rent A Home</h6>
+        </div>
+      
+        <div class="feature-box" onclick="window.location.href='photographer.html'">
+            <img width="200px" src="serviceimg/photo.jpg">
+            <h6>Photography</h6>
+        </div>
+        <div class="feature-box" onclick="window.location.href='puja.html'">
+            <img width="200px" src="serviceimg/puja.jpg">
+            <h6>Puja</h6>
+        </div>
+       
+        <div class="feature-box" onclick="window.location.href='cab.html'">
+            <img width="200px" src="serviceimg/cabbook.jpg">
+            <h6>Cab Book</h6>
+        </div>
+        <div class="feature-box" onclick="window.location.href='rentbike.html'">
+            <img width="200px" src="serviceimg/rentbike.jpg">
+            <h6>Rent Bike</h6>
+        </div>
+      
+        <div class="feature-box" onclick="window.location.href='dogcare.html'">
+            <img width="200px" src="serviceimg/dog.jpg">
+            <h6>Dog Care</h6>
+        </div>
+        <div class="feature-box" onclick="window.location.href='garage.html'">
+            <img width="200px" src="serviceimg/garage.jpg">
+            <h6>garage Man</h6>
+        </div>
+        <div class="feature-box" onclick="window.location.href='homeservices.html'">
+            <img width="200px" src="serviceimg/plumber.jpg">
+            <h6>Basic home Services</h6>
+        </div>
+        <div class="feature-box" onclick="window.location.href='bus.html'">
+            <img width="200px" src="serviceimg/bus.jpg">
+            <h6>Bus Timing</h6>
+        </div>
+        <div class="feature-box" onclick="window.location.href='milkman.html'">
+            <img width="200px" src="serviceimg/milkman.jpg">
+            <h6>Milk Man</h6>
+        </div>
+
+       
+        <div class="feature-box" onclick="window.location.href='salone.html'">
+            <img width="200px" height="150px" src="serviceimg/salone.jpg">
+            <h6>Salone</h6>
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <section id="news-latter" class="section-p1 section-m1 ">
+        <div class="newstext container">
+            <h4>Signup for Newsletters</h4>
+            <p>Get E-mail updates about our Latest services and <span>special events</span></p>
+        </div>
+        <form class="form container" action="signup.html">
+            <input type="email" placeholder="Your E-mail address" required>
+            <button type="submit" class="signup-button">Sign Up</button>
+        </form>
+    </section>
+
+
+
+
+
+    <section class="comment-section container">
+        <h2 class="section-title">Previous Comments</h2>
+        <div class="previous-comments" id="previous-comments">
+
+        </div>
+        <h2 class="section-title">Leave a Comment</h2>
+        <form class="comment-form" id="comment-form">
+            <div class="form-group">
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">What's on your mind? <span class="required">*</span></label>
+                <textarea id="comment" name="comment" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="comment-button">Post Comment</button>
+        </form>
+    </section>
+
+</body>
+
+<script>
+
+
+    const bar = document.getElementById('bar');
+    const close = document.getElementById('close');
+    const nav = document.getElementById('navbar');
+
+    if (bar) {
+        bar.addEventListener('click', () => {
+            nav.classList.add('active')
+        })
+
+    }
+    if (close) {
+        close.addEventListener('click', () => {
+            nav.classList.remove('active')
+        })
+
+    }
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const commentForm = document.getElementById('comment-form');
+        const previousComments = document.getElementById('previous-comments');
+
+        commentForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comment = document.getElementById('comment').value;
+
+            // Create a new comment element
+            const newComment = document.createElement('div');
+            newComment.classList.add('comment');
+
+            // Create paragraph elements for name, email, and comment content
+            const nameParagraph = document.createElement('p');
+            nameParagraph.innerHTML = `<strong>${name}</strong> (${email})`;
+
+            const commentParagraph = document.createElement('p');
+            commentParagraph.textContent = comment;
+
+            const timeParagraph = document.createElement('p');
+            const currentTime = new Date();
+            timeParagraph.textContent = `Posted at ${currentTime.toLocaleString()}`;
+
+            // Append paragraphs to the comment element
+            newComment.appendChild(nameParagraph);
+            newComment.appendChild(commentParagraph);
+            newComment.appendChild(timeParagraph);
+
+            // Append the new comment to the previous comments section
+            previousComments.appendChild(newComment);
+
+            // Reset form fields
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('comment').value = '';
+        });
+    });
+</script>
+
+
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Contact Us</h2>
+                <p>Email: info@example.com</p>
+                <p>Phone: +1234567890</p>
+                <p>Address: 123 Main Street, City, Country</p>
+            </div>
+            <div class="col-md-4">
+                <h2>About Us</h2>
+                <p>A brief description of your company or organization.lorem34</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat iste nihil magni illo, animi, optio
+                    doloremque velit recusandae quibusdam voluptatum eum, fugit culpa obcaecati voluptates ut eos non.
+                    Vel, sequi atque officia laborum eaque nihil iste! Provident quam qui quaerat suscipit?
+                    Reprehenderit hic quidem vero.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Follow Us</h2>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

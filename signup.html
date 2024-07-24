@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>burhumpur services</title>
+    <link rel="stylesheet" href="indexstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        
+        *{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    scroll-behavior:smooth;
+    scroll-padding-top: 3rem;
+    list-style: none;
+    text-decoration:none;
+}
+:root {
+    --main-color:#2288ff;
+    --second-color:#192f6a;
+    --text-color:#314862;
+    --bg-color:#fff;
+
+    --box-shadow:2px 2px 18px rgba(14 52 54 / 15%);
+}
+img{
+    width:100%;
+
+}
+body {
+    color: var(--text-color);
+}
+section{
+    padding: 4.5rem 0 3rem;
+}
+.container{
+    max-width: 1068px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+        .btn{
+    padding: 8px 22px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 5rem;
+}
+.btn:hover{
+    background: #3492fd;
+}
+.login{
+            display: grid;
+            grid-template-columns: 0.4fr 1fr;
+            align-items: center;
+            min-height: 100vh;
+           margin-top: 2rem;
+        }
+        .login-container{
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+
+        }
+        .login-container h2{
+            font-size: 1.4rem;
+        }
+        .login-container p{
+            font-weight: 0.9rem;
+        }
+        .login-container form{
+            display: flex;
+            flex-direction: column;
+        }
+        .login-container form span{
+            font-size: 0.9rem;
+            color: #8a8a8a;
+            margin-bottom: 5px;
+        }
+        .login-container form input{
+            border: 1px solid#8a8a8a;
+            outline: none;
+            padding: 10px;
+            margin-bottom: 1rem;
+            background: var(--bg-color);
+        }
+        .login-container form .button{
+         outline: none;
+         border: none;
+         background: var(--main-color);
+         color: var(--bg-color);
+         font-size: 0.85rem;
+         font-weight: 600;
+
+        }
+        .login-container form .button:hover{
+            background-color: #3492fd;
+        }
+        .login-container form a{
+            font-size: 0.9rem;
+            text-align: right;
+
+        }
+        .login-container .btn{
+            border-radius: 0;
+            text-align: center;
+
+        }
+
+        @media (max-width:880px) {
+            .login{
+                grid-template-columns: 0.8fr 1fr;
+            }
+            .login{
+                margin-top: 3rem;
+            }
+          
+        }
+
+        @media (max-width:572px){
+            .login-image{
+                display:flex;
+                flex-direction: column;
+            }
+            .login{
+                justify-content: center;
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    
+
+
+    
+    <section id="header">
+        <a href="#"><img width="150"   src="img/logo.png" class="logo" alt=""></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="login.html">Log In</a></li>
+                <li><a href="blog.html">blog</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="contact.html">contact</a></li>
+                
+                <a href="#" id="close"><i class="far fa-times"></i></a>
+            </ul>
+        </div>
+        <div class="mobile">
+            <!-- <a href="cart.html"><i class="far fa-shopping-bag"></i></a> -->
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+    <div class="login container">
+        <div class="login-container">
+            <h2>Welcome, Let's get started</h2>
+            <p>Already have an  account?<a href="login.html"> Log in</a>  </p>
+
+            <form action="">
+                <span>Full Name</span>
+                <input type="text" name="" id="" placeholder="your Name">
+                <span>Enter your email addres</span>
+                <input type="email" name="" id="" placeholder="yourmail@gmail.com" required>
+                <span>Phone</span>
+                <input type="tel" name="" id="" placeholder="Enter your number" required>
+                <span>enter your password</span>
+                <input type="password" name="" id="" placeholder="At least 8" required>
+                <input type="submit" value="Sign up" class="button">
+                <a href="login.html">Already have account! </a>
+               
+            </form>
+            <a href="login.html" class="btn">Log in</a>
+        </div>
+        <div class="login-image">
+            <img src="serviceimg/login/sign.jpg" alt="login image">
+        </div>
+    </div>
+
+    
+
+    
+    
+ 
+   
+
+
+
+
+
+
+
+
+
+
+    
+
+     
+</body>
+
+<script>
+    
+
+    const bar=document.getElementById('bar');
+const close=document.getElementById('close');
+const nav=document.getElementById('navbar');
+
+if(bar){
+    bar.addEventListener('click' , ()=>{
+        nav.classList.add('active')
+    })
+
+}
+if(close){
+    close.addEventListener('click' , ()=>{
+        nav.classList.remove('active')
+    })
+    
+}
+
+
+
+
+</script>
+
+
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Contact Us</h2>
+                <p>Email: info@example.com</p>
+                <p>Phone: +1234567890</p>
+                <p>Address: 123 Main Street, City, Country</p>
+            </div>
+            <div class="col-md-4">
+                <h2>About Us</h2>
+                <p>A brief description of your company or organization.lorem34</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat iste nihil magni illo, animi, optio doloremque velit recusandae quibusdam voluptatum eum, fugit culpa obcaecati voluptates ut eos non. Vel, sequi atque officia laborum eaque nihil iste! Provident quam qui quaerat suscipit? Reprehenderit hic quidem vero.</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Follow Us</h2>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

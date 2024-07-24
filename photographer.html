@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Top 10 Photographers</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .photographer {
+            background-color: #c5bebe;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-bottom: 20px;
+            /* background-color:bisque; */
+        }
+
+        .photographer h2 {
+            margin-top: 0;
+
+            color: coral;
+        }
+
+        .photographer img {
+            max-width: 100%;
+            /* Ensure images don't exceed the card width */
+            border-radius: 5px;
+            /* Add rounded corners to the images */
+        }
+
+        .photographer p {
+            margin-top: 10px;
+            /* Add space below the heading */
+        }
+
+        .photographer .contact {
+            margin-top: 20px;
+            /* Add space between content and contact button */
+        }
+
+        .photographer .chat {
+            margin-top: 10px;
+            /* Add space between content and chat section */
+        }
+
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        .photographers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .photographer-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+
+            width: 45%;
+
+        }
+
+        .photographer-card .photographer {
+            padding: 20px;
+        }
+
+
+        .contact button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact button:hover {
+            background-color: #45a049;
+        }
+
+        .chat h3 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .chat-box {
+            height: 100px;
+            overflow-y: scroll;
+            border: 1px solid #4b4343;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .message-input {
+            width: calc(100% - 20px);
+            padding: 5px 10px;
+            margin-bottom: 10px;
+        }
+
+        .send-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .send-button:hover {
+            background-color: #45a049;
+        }
+
+        .main-container {
+            display: flex;
+        }
+
+        .left-container,
+        .right-container {
+            flex: 1;
+        }
+
+        .info {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .info img {
+            width: 200px;
+            height: 200px;
+            border-radius: 30%;
+            margin-bottom: 10px;
+        }
+
+        .right-container {
+            overflow: hidden;
+        }
+
+        .photos-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .photos {
+            display: flex;
+            transition: transform 0.5s ease;
+            display: flex;
+
+            overflow-x: hidden;
+
+            position: relative;
+
+            transition: transform 0.5s ease;
+
+
+        }
+
+        .photos img {
+            width: 100%;
+            border-radius: 5px;
+            height: 20rem;
+            display: none;
+            flex: 0 0 auto;
+
+            transition: transform 0.5s ease;
+
+        }
+
+        .photos img.active {
+            display: block;
+        }
+
+
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #2a2828;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+
+
+        .centered-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: #ffffff;
+        }
+
+
+        .container {
+            max-width: 1060px;
+            margin: auto;
+            width: 90%;
+        }
+
+        .info p {
+            color: black;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+
+
+  
+
+
+
+        @media screen and (max-width: 768px) {
+    .photographer {
+        width: 100%;
+    }
+    
+    .centered-container {
+        flex-direction: column;
+    }
+
+    .right-container {
+        padding-top: 20px;
+        position: relative;
+        left: 15px;
+    }
+
+    .photos-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .photos img {
+        width: 250px; /* Adjust sample photo size for small screens */
+        height: 250px;
+        margin-right: 10px;
+    }
+      
+    .prev,
+    .next {
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%);
+        background:none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute; /* Change to absolute positioning */
+
+    }
+
+    .prev {
+        left: 0; /* Align left */
+    }
+
+    .next {
+        right: 10px; /* Align right */
+    }
+    .info {
+        width: 100%;
+    }
+
+    .info p {
+        width: 90%;
+        word-wrap: break-word;
+    }
+    .chat {
+        padding: 10px; 
+        width: 90%;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="top container">
+            <h1>Top 10 Photographers </h1>
+        </div>
+    </header>
+
+    <div class="photographers container">
+
+        <div class="photographer">
+            <div class="main-container">
+                <div class="centered-container">
+                    <div class="left-container">
+                        <div class="info">
+                            <img src="serviceimg/bus.jpg" alt="Photographer 1">
+                            <h2>Photographer 1</h2>
+                            <p>Photographer details Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                massa
+                                purus, commodo a tincidunt sed, tristique sit amet quam. Ut eleifend, sapien et
+                                varius
+                                laoreet, nisi leo maximus odio, id consequat mauris dui sit amet lorem.</p>
+                            <div class="contact">
+                                <button class="contact-button" data-photographer="1">Contact Me</button>
+                            </div>
+                            <div class="chat chat-1" style="display: none;">
+                                <h3>Chat</h3>
+                                <div class="chat-box">
+                                    <!-- Chat messages will be displayed here -->
+                                </div>
+                                <textarea class="message-input" placeholder="Type your message..."></textarea>
+                                <button class="send-button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <h3>Sample Photos</h3>
+                        <div class="photos-container">
+                            <div class="photos" id="photos-1">
+                                <img class="active" src="serviceimg/booktable.jpg" alt="Sample Photo 1">
+                                <img src="serviceimg/cabbook.jpg" alt="Sample Photo 2">
+                                <img src="serviceimg/dog.jpg" alt="Sample Photo 3">
+                                <!-- Repeat sample photos as needed -->
+                            </div>
+                            <button class="prev" onclick="plusSlides(-1, 'photos-1')">❮ </button>
+                            <button class="next" onclick="plusSlides(1, 'photos-1')"> ❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="photographer">
+            <div class="main-container">
+                <div class="centered-container">
+                    <div class="left-container">
+
+                        <div class="info">
+                            <img src="photographer1.jpg" alt="Photographer 2">
+                            <h2>Photographer 2</h2>
+                            <p>Photographer details Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                massa
+                                purus, commodo a tincidunt sed, tristique sit amet quam. Ut eleifend, sapien et
+                                varius
+                                laoreet, nisi leo maximus odio, id consequat mauris dui sit amet lorem.</p>
+                            <div class="contact">
+                                <button class="contact-button" data-photographer="2">Contact Me</button>
+                            </div>
+                            <div class="chat chat-2" style="display: none;">
+                                <h3>Chat</h3>
+                                <div class="chat-box">
+                                    <!-- Chat messages will be displayed here -->
+                                </div>
+                                <textarea class="message-input" placeholder="Type your message..."></textarea>
+                                <button class="send-button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <h3>Sample Photos</h3>
+                        <div class="photos-container">
+                            <div class="photos" id="photos-2">
+                                <img class="active" src="serviceimg/cctv.jpg" alt="Sample Photo 1">
+                                <img src="serviceimg/puja.jpg" alt="Sample Photo 2">
+                                <img src="serviceimg/bike/bike2.jpg" alt="Sample Photo 3">
+                                <!-- Repeat sample photos as needed -->
+                            </div>
+                            <button class="prev" onclick="plusSlides(-1, 'photos-2')">❮ </button>
+                            <button class="next" onclick="plusSlides(1, 'photos-2')"> ❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="photographer">
+            <div class="main-container">
+                <div class="centered-container">
+                    <div class="left-container">
+
+                        <div class="info">
+                            <img src="photographer1.jpg" alt="Photographer 3">
+                            <h2>Photographer 3</h2>
+                            <p>Photographer details Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                massa
+                                purus, commodo a tincidunt sed, tristique sit amet quam. Ut eleifend, sapien et
+                                varius
+                                laoreet, nisi leo maximus odio, id consequat mauris dui sit amet lorem.</p>
+                            <div class="contact">
+                                <button class="contact-button" data-photographer="3">Contact Me</button>
+                            </div>
+                            <div class="chat chat-3" style="display: none;">
+                                <h3>Chat</h3>
+                                <div class="chat-box">
+                                    <!-- Chat messages will be displayed here -->
+                                </div>
+                                <textarea class="message-input" placeholder="Type your message..."></textarea>
+                                <button class="send-button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <h3>Sample Photos</h3>
+                        <div class="photos-container">
+                            <div class="photos" id="photos-3">
+                                <img class="active" src="serviceimg/bike/bike4.jpg" alt="Sample Photo 1">
+                                <img src="serviceimg/dog.jpg" alt="Sample Photo 2">
+                                <img src="serviceimg/bike/bike2.jpg" alt="Sample Photo 3">
+                                <!-- Repeat sample photos as needed -->
+                            </div>
+                            <button class="prev" onclick="plusSlides(-1, 'photos-3')">❮ </button>
+                            <button class="next" onclick="plusSlides(1, 'photos-3')"> ❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="photographer">
+            <div class="main-container">
+                <div class="centered-container">
+                    <div class="left-container">
+
+                        <div class="info">
+                            <img src="photographer1.jpg" alt="Photographer 4">
+                            <h2>Photographer 4</h2>
+                            <p>Photographer details Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                massa
+                                purus, commodo a tincidunt sed, tristique sit amet quam. Ut eleifend, sapien et
+                                varius
+                                laoreet, nisi leo maximus odio, id consequat mauris dui sit amet lorem.</p>
+                            <div class="contact">
+                                <button class="contact-button" data-photographer="4">Contact Me</button>
+                            </div>
+                            <div class="chat chat-4" style="display: none;">
+                                <h3>Chat</h3>
+                                <div class="chat-box">
+                                    <!-- Chat messages will be displayed here -->
+                                </div>
+                                <textarea class="message-input" placeholder="Type your message..."></textarea>
+                                <button class="send-button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <h3>Sample Photos</h3>
+                        <div class="photos-container">
+                            <div class="photos" id="photos-4">
+                                <img class="active" src="serviceimg/cctv.jpg" alt="Sample Photo 1">
+                                <img src="serviceimg/puja.jpg" alt="Sample Photo 2">
+                                <img src="serviceimg/bike/bike2.jpg" alt="Sample Photo 3">
+                                <!-- Repeat sample photos as needed -->
+                            </div>
+                            <button class="prev" onclick="plusSlides(-1, 'photos-4')">❮ </button>
+                            <button class="next" onclick="plusSlides(1, 'photos-4')"> ❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="photographer">
+            <div class="main-container">
+                <div class="centered-container">
+                    <div class="left-container">
+
+                        <div class="info">
+                            <img src="photographer1.jpg" alt="Photographer 5">
+                            <h2>Photographer 5</h2>
+                            <p>Photographer details Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                massa
+                                purus, commodo a tincidunt sed, tristique sit amet quam. Ut eleifend, sapien et
+                                varius
+                                laoreet, nisi leo maximus odio, id consequat mauris dui sit amet lorem.</p>
+                            <div class="contact">
+                                <button class="contact-button" data-photographer="5">Contact Me</button>
+                            </div>
+                            <div class="chat chat-5" style="display: none;">
+                                <h3>Chat</h3>
+                                <div class="chat-box">
+                                    <!-- Chat messages will be displayed here -->
+                                </div>
+                                <textarea class="message-input" placeholder="Type your message..."></textarea>
+                                <button class="send-button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <h3>Sample Photos</h3>
+                        <div class="photos-container">
+                            <div class="photos" id="photos-5">
+                                <img class="active" src="serviceimg/cctv.jpg" alt="Sample Photo 1">
+                                <img src="serviceimg/puja.jpg" alt="Sample Photo 2">
+                                <img src="serviceimg/bike/bike2.jpg" alt="Sample Photo 3">
+                                <!-- Repeat sample photos as needed -->
+                            </div>
+                            <button class="prev" onclick="plusSlides(-1, 'photos-5')">❮ </button>
+                            <button class="next" onclick="plusSlides(1, 'photos-5')"> ❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="photographer">
+            <div class="main-container">
+                <div class="centered-container">
+                    <div class="left-container">
+
+                        <div class="info">
+                            <img src="photographer1.jpg" alt="Photographer 6">
+                            <h2>Photographer 6</h2>
+                            <p>Photographer details Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                massa
+                                purus, commodo a tincidunt sed, tristique sit amet quam. Ut eleifend, sapien et
+                                varius
+                                laoreet, nisi leo maximus odio, id consequat mauris dui sit amet lorem.</p>
+                            <div class="contact">
+                                <button class="contact-button" data-photographer="6">Contact Me</button>
+                            </div>
+                            <div class="chat chat-6" style="display: none;">
+                                <h3>Chat</h3>
+                                <div class="chat-box">
+                                    <!-- Chat messages will be displayed here -->
+                                </div>
+                                <textarea class="message-input" placeholder="Type your message..."></textarea>
+                                <button class="send-button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <h3>Sample Photos</h3>
+                        <div class="photos-container">
+                            <div class="photos" id="photos-6">
+                                <img class="active" src="serviceimg/cctv.jpg" alt="Sample Photo 1">
+                                <img src="serviceimg/puja.jpg" alt="Sample Photo 2">
+                                <img src="serviceimg/bike/bike2.jpg" alt="Sample Photo 3">
+                                <!-- Repeat sample photos as needed -->
+                            </div>
+                            <button class="prev" onclick="plusSlides(-1, 'photos-6')">❮ </button>
+                            <button class="next" onclick="plusSlides(1, 'photos-6')"> ❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="photographer">
+            <div class="main-container">
+                <div class="centered-container">
+                    <div class="left-container">
+
+                        <div class="info">
+                            <img src="photographer1.jpg" alt="Photographer 7">
+                            <h2>Photographer 7</h2>
+                            <p>Photographer details Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                massa
+                                purus, commodo a tincidunt sed, tristique sit amet quam. Ut eleifend, sapien et
+                                varius
+                                laoreet, nisi leo maximus odio, id consequat mauris dui sit amet lorem.</p>
+                            <div class="contact">
+                                <button class="contact-button" data-photographer="7">Contact Me</button>
+                            </div>
+                            <div class="chat chat-7" style="display: none;">
+                                <h3>Chat</h3>
+                                <div class="chat-box">
+                                    <!-- Chat messages will be displayed here -->
+                                </div>
+                                <textarea class="message-input" placeholder="Type your message..."></textarea>
+                                <button class="send-button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <h3>Sample Photos</h3>
+                        <div class="photos-container">
+                            <div class="photos" id="photos-7">
+                                <img class="active" src="serviceimg/cctv.jpg" alt="Sample Photo 1">
+                                <img src="serviceimg/puja.jpg" alt="Sample Photo 2">
+                                <img src="serviceimg/bike/bike2.jpg" alt="Sample Photo 3">
+                                <!-- Repeat sample photos as needed -->
+                            </div>
+                            <button class="prev" onclick="plusSlides(-1, 'photos-7')">❮ </button>
+                            <button class="next" onclick="plusSlides(1, 'photos-7')"> ❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="photographer">
+            <div class="main-container">
+                <div class="centered-container">
+                    <div class="left-container">
+
+                        <div class="info">
+                            <img src="photographer1.jpg" alt="Photographer 8">
+                            <h2>Photographer 8</h2>
+                            <p>Photographer details Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                massa
+                                purus, commodo a tincidunt sed, tristique sit amet quam. Ut eleifend, sapien et
+                                varius
+                                laoreet, nisi leo maximus odio, id consequat mauris dui sit amet lorem.</p>
+                            <div class="contact">
+                                <button class="contact-button" data-photographer="8">Contact Me</button>
+                            </div>
+                            <div class="chat chat-8" style="display: none;">
+                                <h3>Chat</h3>
+                                <div class="chat-box">
+                                    <!-- Chat messages will be displayed here -->
+                                </div>
+                                <textarea class="message-input" placeholder="Type your message..."></textarea>
+                                <button class="send-button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <h3>Sample Photos</h3>
+                        <div class="photos-container">
+                            <div class="photos" id="photos-8">
+                                <img class="active" src="serviceimg/cctv.jpg" alt="Sample Photo 1">
+                                <img src="serviceimg/puja.jpg" alt="Sample Photo 2">
+                                <img src="serviceimg/bike/bike2.jpg" alt="Sample Photo 3">
+                                <!-- Repeat sample photos as needed -->
+                            </div>
+                            <button class="prev" onclick="plusSlides(-1, 'photos-8')">❮ </button>
+                            <button class="next" onclick="plusSlides(1, 'photos-8')"> ❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="photographer">
+            <div class="main-container">
+                <div class="centered-container">
+                    <div class="left-container">
+
+                        <div class="info">
+                            <img src="photographer1.jpg" alt="Photographer 1">
+                            <h2>Photographer 9</h2>
+                            <p>Photographer details Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                massa
+                                purus, commodo a tincidunt sed, tristique sit amet quam. Ut eleifend, sapien et
+                                varius
+                                laoreet, nisi leo maximus odio, id consequat mauris dui sit amet lorem.</p>
+                            <div class="contact">
+                                <button class="contact-button" data-photographer="9">Contact Me</button>
+                            </div>
+                            <div class="chat chat-9" style="display: none;">
+                                <h3>Chat</h3>
+                                <div class="chat-box">
+                                    <!-- Chat messages will be displayed here -->
+                                </div>
+                                <textarea class="message-input" placeholder="Type your message..."></textarea>
+                                <button class="send-button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <h3>Sample Photos</h3>
+                        <div class="photos-container">
+                            <div class="photos" id="photos-9">
+                                <img class="active" src="serviceimg/cctv.jpg" alt="Sample Photo 1">
+                                <img src="serviceimg/puja.jpg" alt="Sample Photo 2">
+                                <img src="serviceimg/bike/bike2.jpg" alt="Sample Photo 3">
+                                <!-- Repeat sample photos as needed -->
+                            </div>
+                            <button class="prev" onclick="plusSlides(-1, 'photos-9')">❮ </button>
+                            <button class="next" onclick="plusSlides(1, 'photos-9')"> ❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="photographer">
+            <div class="main-container">
+                <div class="centered-container">
+                    <div class="left-container">
+
+                        <div class="info">
+                            <img src="photographer1.jpg" alt="Photographer 1">
+                            <h2>Photographer 10</h2>
+                            <p>Photographer details Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                                massa
+                                purus, commodo a tincidunt sed, tristique sit amet quam. Ut eleifend, sapien et
+                                varius
+                                laoreet, nisi leo maximus odio, id consequat mauris dui sit amet lorem.</p>
+                            <div class="contact">
+                                <button class="contact-button" data-photographer="10">Contact Me</button>
+                            </div>
+                            <div class="chat chat-10" style="display: none;">
+                                <h3>Chat</h3>
+                                <div class="chat-box">
+                                    <!-- Chat messages will be displayed here -->
+                                </div>
+                                <textarea class="message-input" placeholder="Type your message..."></textarea>
+                                <button class="send-button">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-container">
+                        <h3>Sample Photos</h3>
+                        <div class="photos-container">
+                            <div class="photos" id="photos-10">
+                                <img class="active" src="serviceimg/cctv.jpg" alt="Sample Photo 1">
+                                <img src="serviceimg/puja.jpg" alt="Sample Photo 2">
+                                <img src="serviceimg/bike/bike2.jpg" alt="Sample Photo 3">
+                                <!-- Repeat sample photos as needed -->
+                            </div>
+                            <button class="prev" onclick="plusSlides(-1, 'photos-10')">❮ </button>
+                            <button class="next" onclick="plusSlides(1, 'photos-10')"> ❯</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let slideIndex1 = 0;
+        let slideIndex2 = 0;
+        let slideIndex3 = 0;
+        let slideIndex4 = 0;
+        let slideIndex5 = 0;
+        let slideIndex6 = 0;
+        let slideIndex7 = 0;
+        let slideIndex8 = 0;
+        let slideIndex9 = 0;
+        let slideIndex10 = 0;
+
+        const slides1 = document.querySelectorAll('#photos-1 img');
+        const slides2 = document.querySelectorAll('#photos-2 img');
+        const slides3 = document.querySelectorAll('#photos-3 img');
+        const slides4 = document.querySelectorAll('#photos-4 img');
+        const slides5 = document.querySelectorAll('#photos-5 img');
+        const slides6 = document.querySelectorAll('#photos-6 img');
+        const slides7 = document.querySelectorAll('#photos-7 img');
+        const slides8 = document.querySelectorAll('#photos-8 img');
+        const slides9 = document.querySelectorAll('#photos-9 img');
+        const slides10 = document.querySelectorAll('#photos-10 img');
+
+
+        showSlides(slideIndex1, slides1);
+        showSlides(slideIndex2, slides2);
+        showSlides(slideIndex3, slides3);
+        showSlides(slideIndex4, slides4);
+        showSlides(slideIndex5, slides5);
+        showSlides(slideIndex6, slides6);
+        showSlides(slideIndex7, slides7);
+        showSlides(slideIndex8, slides8);
+        showSlides(slideIndex9, slides9);
+        showSlides(slideIndex10, slides10);
+
+
+
+        function plusSlides(n, photosId) {
+            if (photosId === 'photos-1') {
+                showSlides(slideIndex1 += n, slides1);
+            } else if (photosId === 'photos-2') {
+                showSlides(slideIndex2 += n, slides2);
+            } else if (photosId === 'photos-3') {
+                showSlides(slideIndex3 += n, slides3);
+            } else if (photosId === 'photos-4') {
+                showSlides(slideIndex2 += n, slides4);
+            } else if (photosId === 'photos-5') {
+                showSlides(slideIndex2 += n, slides5);
+            } else if (photosId === 'photos-6') {
+                showSlides(slideIndex2 += n, slides6);
+            } else if (photosId === 'photos-7') {
+                showSlides(slideIndex2 += n, slides7);
+            } else if (photosId === 'photos-8') {
+                showSlides(slideIndex2 += n, slides8);
+            } else if (photosId === 'photos-9') {
+                showSlides(slideIndex2 += n, slides9);
+            } else if (photosId === 'photos-10') {
+                showSlides(slideIndex2 += n, slides10);
+            }
+        }
+
+        function showSlides(n, slides) {
+            const numSlides = slides.length;
+
+            // Ensure slideIndex wraps around if it exceeds the number of slides
+            slideIndex = (n + numSlides) % numSlides;
+
+            // Hide all slides
+            slides.forEach(slide => {
+                slide.style.display = "none";
+            });
+
+            // Display the current slide
+            slides[slideIndex].style.display = "block";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const contactButtons = document.querySelectorAll(".contact-button");
+            const sendButtons = document.querySelectorAll(".send-button");
+
+            contactButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const photographerId = this.getAttribute("data-photographer");
+                    const chatSection = document.querySelector(`.chat-${photographerId}`);
+                    chatSection.style.display = chatSection.style.display === "block" ? "none" : "block";
+                });
+            });
+
+            sendButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const messageInput = this.parentElement.querySelector(".message-input");
+                    const message = messageInput.value.trim();
+                    if (message !== "") {
+                        const chatBox = this.parentElement.querySelector(".chat-box");
+                        displayMessage(chatBox, message);
+                        messageInput.value = "";
+                    }
+                });
+            });
+
+            function displayMessage(chatBox, message) {
+                const messageElement = document.createElement("div");
+                messageElement.textContent = message;
+                chatBox.appendChild(messageElement);
+                chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

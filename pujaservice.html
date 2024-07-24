@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: antiquewhite;
+        }
+
+        header {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: #ffffff;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid #e1dbd2;
+            background-color: maroon;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            line-height: 1.2rem;
+            padding: 0 2px;
+            border: 2px solid rgba(212, 235, 1, 0.893);
+            font-weight: 500;
+            color: aliceblue;
+            background: black;
+            text-transform: uppercase;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            column-gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-size: .9rem;
+            font-weight: 700;
+            color: black;
+            text-transform: uppercase;
+        }
+
+
+
+
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 5px;
+            cursor: pointer;
+            z-index: 100;
+            transition: .3s;
+        }
+
+        .menu-icon div {
+            display: block;
+            background: black;
+            height: 2px;
+            width: 25px;
+            transition: .3s;
+        }
+
+        .move .line1 {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+
+        .move .line2 {
+            opacity: 0;
+        }
+
+        .move .line3 {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu-icon {
+                display: flex;
+            }
+
+            .navbar {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #e7c9b0;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar.active {
+                display: flex;
+            }
+
+            .nav-link {
+                margin-top: 1rem;
+                font-size: 1rem;
+            }
+
+            .sign-up,
+            .mobile-sign-up {
+                display: none;
+            }
+
+            .home h1 {
+                font-size: 3rem;
+                line-height: 3rem;
+            }
+
+            .home-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+
+
+
+        */
+
+        /* Resetting default margin and padding */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style for the full-width section */
+        .full-width-section {
+            background-image: url(serviceimg/puja/backbanner.jpg);
+            /* Replace 'background-image.jpg' with your own image path */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #fff;
+            /* Text color */
+            padding: 100px 0;
+            /* Adjust padding as needed */
+        }
+
+        /* Styles for the content inside the full-width section */
+        .full-width-section .content {
+            max-width: 800px;
+            /* Adjust max-width as needed */
+            margin: 0 auto;
+        }
+
+        .full-width-section h1 {
+            font-size: 36px;
+            /* Adjust font size as needed */
+        }
+
+        .full-width-section p {
+            font-size: 18px;
+            /* Adjust font size as needed */
+        }
+
+        /* Resetting default margin and padding */
+
+        /* Resetting default margin and padding */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for cards */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Style for the card */
+        .card {
+            width: 300px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: rgb(239, 239, 94);
+            
+        }
+
+        /* Style for the image inside the card */
+        .card-image {
+            width: 100%;
+            height: 300px;
+            border-radius: 50%;
+        }
+
+        /* Style for the horizontal line */
+        .line {
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Style for the content inside the card */
+        .card-content {
+            padding: 20px;
+            background-color: rgb(200, 16, 16);
+            border-radius: 20%;
+            cursor: pointer;
+        }
+
+        .card-content h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #fcfcfc;
+        }
+
+       
+
+        /* Responsive layout */
+        @media screen and (max-width: 300px) {
+            .card {
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
+    <title>puja</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="nav ">
+            <a href="#" class="logo">Online-pandit</a>
+            <div class="navbar">
+                <a href="#home" class="nav-link" onclick="window.location.href='puja.html'" >Home</a>
+                <a href="#services" class="nav-link" onclick="window.location.href='pujaservice.html'">services</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">contact</a>
+                <!-- <a href="#" class="mobile-sign-up">Sign Up</a> -->
+            </div>
+            <!-- <a href="#" class="sign-up">Sign Up</a> -->
+            <div class="menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="full-width-section">
+        <div class="content">
+            <h1>Puja Services</h1>
+            <p>See all the puja Services that we offer.</p>
+        </div>
+    </section>
+
+    <div class="container" >
+        <div class="card">
+            <img src="serviceimg/puja/ganesh.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>Maha Ganapati Homa</h2>
+               
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/rudra.jpg" alt="Image 2" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>Rudrabhishek Puja</h2>
+                
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/nama.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>Namakaran Puja</h2>
+               
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/pre.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>pre-wedding and Haladi...</h2>
+                
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/godh.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>Godh Bharai</h2>
+               
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/navagraha.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>Navagraha Puja And hom..</h2>
+               
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/hanuman.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>Hanuman Chalisa Path</h2>
+                
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/sudhi.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>Sudhi Puja And havan</h2>
+            
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/navaratri.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>Navaratri Durga Puja</h2>
+              
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/dewali.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>Diwali Laxmi Puja</h2>
+               
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/saraswati.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>Saraswati Puja</h2>
+                
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/mrg.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>Marraige Puja</h2>
+               
+            </div>
+        </div>
+        <div class="card">
+            <img src="serviceimg/puja/biswakarma.jpg" alt="Image 1" class="card-image">
+            <hr class="line">
+            <div class="card-content">
+                <h2>biswakarma Puja</h2>
+              
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+<script>
+    const menuBtn = document.querySelector(".menu-icon");
+    const navbar = document.querySelector(".navbar");
+
+    menuBtn.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        menuBtn.classList.toggle("move");
+    });
+</script>
+</body>
+
+</html>

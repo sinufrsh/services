@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Timing</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url(serviceimg/bus/bus1st.jpg); /* Set your background image here */
+            background-size: cover;
+            background-position: center;
+        }
+        .details {
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+        .details h2 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+        }
+        .details form {
+            display: flex;
+            flex-direction: column;
+        }
+        .details form label {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .details form input[type="text"],
+        .details form input[type="time"],
+        .details form input[type="date"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+       
+        .details form button {
+            padding: 12px;
+            background-color: #d01e2a;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .details form button:hover {
+            background-color: #b81823;
+        }
+        @media (max-width: 600px) { /* Adjust for smaller screens */
+            .details {
+                width: 100%; /* Make it full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bus Timing</h1>
+    </header>
+    <div class="container">
+        <div class="details">
+            <h2>Check Bus Timing</h2>
+            <form>
+                <label for="origin">Origin:</label>
+                <input type="text" id="origin" name="origin" placeholder="Enter origin">
+
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" placeholder="Enter destination">
+  
+                <label for="date">Date:</label>
+                <input type="date" id="time">
+
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time">
+
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+   
+</body>
+</html>

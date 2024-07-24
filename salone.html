@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        /* Style the header */
+        *{
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+           scroll-behavior: smooth;
+        }
+      
+        body{
+            background-color: rgb(234, 234, 114);
+        }
+        header {
+            text-align: center; /* Center align the content */
+            padding: 20px; /* Add some padding for spacing */
+            background-color: rgb(234, 234, 114);/* Light gray background color */
+           
+        }
+        header h1{
+            color: black;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: 700;
+        }
+        .container{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+        .hero-section {
+   
+    background-size: cover;
+    background-position: center;
+    height: 500px; 
+    /* margin-top: 50px;  */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;   
+}
+
+  
+.content1 {
+    position: relative;
+    display: flex;
+    left: 50px;
+    flex-direction: column;  
+    padding-top: 100px; 
+
+}
+.content a{
+    margin: 10px;
+}
+.content1 p{
+    color: #000000;
+    font-size: 30px;
+    font-weight: 700;
+}
+h1 {
+    color: rgb(0, 0, 0);
+    font-size: 36px;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section {
+        height: 300px; 
+    }
+    .content {
+        padding-top: 50px;
+    }
+    h1 {
+        font-size: 28px; 
+    }
+}
+
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    top:60px;
+    left: 60px;
+}
+.button:hover {
+    background-color: #45a049;
+    border-color: #45a049;
+    transform: translateY(-2px);
+}
+.button:active {
+    transform: translateY(2px);
+}
+
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slideBackground 10s linear infinite;
+}
+
+@keyframes slideBackground {
+    0% {
+        background-image: url('serviceimg/sallon/slide1.jpg');
+    }
+    33.333% {
+        background-image: url('serviceimg/sallon/slide2.jpg');
+    }
+    66.666% {
+        background-image: url('serviceimg/sallon/slide3.jpg');
+    }
+    100% {
+        background-image: url('serviceimg/sallon/allcut.jpg');
+    }
+}
+.content p{
+      font-size: 20px;
+}
+   .button1{
+    
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #070707;
+   
+    border-radius: 5px;
+    border: 2px solid black;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+     margin-bottom: 10px;
+    
+   }
+
+
+
+   .new-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .new-section hr {
+            width: 100px;
+            margin: 0 auto 20px auto;
+            border: 1px solid #000;
+        }
+        .new-section p{
+            font-size: 20px;
+        }
+        .new-section h2{
+            font-weight: 700;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+
+
+        .available-section {
+            background-image: url('serviceimg/sallon/slide3.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 100px 0;
+            font-size: 30px;
+            font-weight: 500;
+         
+        }
+        .available-section p{
+            font-size: 60px;
+        }
+        .available-section:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(28, 20, 45, 0.9); /* Adjust opacity as needed */
+        }
+
+        
+        .text-overlay {
+    position: relative;
+    z-index: 1; /* Ensure text is above the background */
+}
+
+.text-overlay h2,
+.text-overlay p {
+    color: white; /* Set text color to white */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+}
+
+.bottom-link {
+    position:relative;
+    bottom: -40px;
+    left: 45%;
+    transform: translateX(-50%);
+    color: red;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.find-shop-section {
+    padding: 20px;
+
+}
+
+.find-shop-section h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 50px;
+}
+
+.find-shop-form {
+    display: flex;
+    align-items: center;
+}
+
+.find-shop-form input[type="text"],
+.find-shop-form input[type="number"] {
+    padding: 20px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.find-shop-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+}
+
+.find-shop-form button:hover {
+    background-color: #cd1b21;
+   
+}
+.above-find-shop{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* Media query for small and medium screens */
+@media screen and (max-width: 768px) {
+    .find-shop-form {
+        flex-direction: column;
+    }
+
+    .find-shop-form input[type="text"],
+    .find-shop-form input[type="number"],
+    .find-shop-form button {
+        margin-bottom: 10px; /* Add margin between items */
+    }
+}
+
+
+/* Global styles */
+
+
+
+
+/* Our Services section */
+.our-services {
+    text-align: center;
+    background-color: rgb(209, 209, 138);
+}
+
+.our-services h2 {
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+.our-services p {
+    margin-bottom: 40px;
+}
+
+.services-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.service-card h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    margin-bottom: 15px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .services-cards {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+
+
+
+
+
+.pricing-heading {
+            font-size: 34px;
+            font-weight: bold;
+            margin-bottom: 0px;
+            color: rgb(11, 11, 11);
+            position: relative;
+            left: 70px;
+        }
+
+
+        /* Styles for the card container */
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 50px;
+
+          
+        }
+
+        /* Styles for each card */
+        .card {
+            background-color: rgb(234, 234, 114);
+            border-radius: 8px;
+            padding: 20px;
+            border: 2px solid #ffffff;
+            color: black;
+        }
+
+        /* Styles for the image */
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Styles for the heading */
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+
+        }
+
+        /* Styles for the price */
+        .card .price {
+            font-size: 18px;
+            color: #121111;
+            margin-bottom: 10px;
+        }
+
+        /* Styles for the button */
+        .card .btn {
+            background-color: #fff;
+            color: #0f0e0e;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 0;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* Styles for the paragraph */
+        .card p {
+            margin-bottom: 10px;
+        }
+
+        /* Styles for the additional words */
+        .card .additional-words {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Styles for the tick sign */
+        .card .additional-words span::before {
+            content: '\2714';
+            /* Unicode for a tick sign */
+            margin-right: 5px;
+        }
+
+        .container3 {
+            max-width: 1060px;
+            margin: auto;
+            width: 60%;
+            /* Adjusted for responsiveness */
+        }
+
+
+        
+        @media screen and (max-width: 768px) {
+            .card-container {
+                justify-content: flex-start;
+                padding-left: 20px;
+            }
+
+            .container3 {
+                flex-basis: 100%;
+            }
+
+            .pricing-heading {
+                text-align: left;
+
+            }
+        }
+
+
+
+
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-map,
+.contact-form {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (min-width: 768px) {
+    .contact-section {
+        flex-direction: row;
+    }
+
+    .contact-map,
+    .contact-form {
+        width: 50%;
+        margin-bottom: 0;
+    }
+
+    .contact-form {
+        margin-left: 20px;
+    }
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 767px) {
+    .contact-form {
+        margin-left: 0; /* Remove left margin for small screens */
+    }
+}
+
+     
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Transform your Look Today</h1>
+</header>
+
+<section class="content container">
+    
+    <p>Experience top-notch grooming for men,women, and children at a modern barber shop in barahmpur.</p>
+    <a href="#form-section" class="button1">Book Now</a>
+</section>
+
+<section class="hero-section container" id="home">
+    <div class="slideshow"></div>
+    <div class="content1">
+        <h1>Welcome</h1>
+        <p>Where every haircut tells a story of style and confidence </p>
+      
+    </div>
+   
+
+</section>
+
+
+
+
+<section class="new-section container">
+    <hr>
+    <h2>New Section Heading</h2>
+    <hr>
+    <p>This is a paragraph within the new section.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate libero odio totam deleniti nihil molestias, dolorum exercitationem, fugit nulla quae sit debitis ab autem consectetur maiores dolorem minus consequuntur rem illum facilis inventore tenetur hic? Voluptatem voluptas consectetur debitis aliquam impedit, vero soluta unde voluptates sapiente eos? Recusandae provident, quasi maiores amet delectus impedit!\</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, eaque? Fugit officiis aperiam rerum tempora. Libero consectetur adipisci, tempore ipsa ipsam illum? Libero quas incidunt adipisci consectetur quis voluptatem ipsam doloribus animi nostrum alias voluptate obcaecati maxime rem accusantium sequi eius eaque praesentium a reiciendis provident consequatur architecto sed, fuga id. Expedita nostrum culpa unde, placeat corrupti inventore doloremque nam sequi magni quaerat cum! Doloremque quaerat voluptatum odit enim quos consectetur molestias minima, ipsa dolores dignissimos ad in consequatur provident voluptate, fuga suscipit incidunt illum temporibus? Cupiditate minus, at officia officiis consequatur ex, molestias fugiat blanditiis porro quasi, pariatur ipsum.</p>
+</section>
+
+
+<section class="available-section container">
+    <div class="zigzag-border"></div>
+    <div class="text-overlay">
+        <h2>Now Available!</h2>
+        <p>ONLINE BOOKING</p>
+        <a href="#form-section" class="bottom-link">Click Here</a>
+
+    </div>
+</section>
+
+<section class="above-find-shop container">
+    <img src="serviceimg/sallon/scissor.png"  width="50" alt="Scissors Image">
+
+</section>
+   
+<section class="find-shop-section container">
+    <h2>Find a Shop Near You</h2>
+    <div class="find-shop-form">
+        <input type="text" placeholder="Enter Location">
+        <input type="number" placeholder="Within KM">
+        <button type="submit">Search</button>
+    </div>
+</section>
+
+
+
+
+ <section class="our-services container">
+    <img src="serviceimg/sallon/scissor.png"  width="50" alt="Scissors Image">
+    <h2> SERVICES</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="services-cards">
+        <div class="service-card">
+            <img src="serviceimg/sallon/hairbrush.png" width="50" alt="Service 1">
+            <h3>THE WORKS</h3>
+            <p>$37</p>
+            <p>The best bang for your buck. In addition to your precision cut,enjoy a stimulating shampoo,scalp massage and a hot lather neck shave.For only $37,you'll fell like a new man!</p>
+
+        </div>
+        <div class="service-card">
+            <img src="serviceimg/sallon/cut.png" width="50" alt="Service 2">
+            <h3>MEN'S CUT</h3>
+            <p>$20</p>
+            <p>The base price for our precision, barber style haircut. Trained barbers, intent on providing you with the absolute best barbershop experience around, will consult with you to create the exact look and style you are looking for. Topped off with our signature neck and shoulder massage..</p>
+        </div>
+        <div class="service-card">
+            <img src="serviceimg/sallon/cut.png" width="50" alt="Service 1">
+            <h3>KID'S CUT</h3>
+            <p>$37</p>
+            <p>Bring your son in to enjoy our true barber shop experience! Come in together and leave looking and feeling great! Neck and shoulder massage included. Ages 10 and younger.</p>
+
+        </div>
+        <div class="service-card">
+            <img src="serviceimg/sallon/cut.png" width="50" alt="Service 1">
+            <h3>WOMEN'S CUT</h3>
+            <p>$37</p>
+            <p>The best bang for your buck. In addition to your precision cut,enjoy a stimulating shampoo,scalp massage and a hot lather neck shave.For only $37,you'll fell like a new man!</p>
+
+        </div>
+       
+    </div>
+</section> 
+
+
+
+
+<div class="card-container container">
+    <h1 class="pricing-heading ">Our Pricing Options</h1>
+  
+    <div class="card container3">
+        <img src="serviceimg/sallon/men.jpg" alt="Image 1">
+        <h2> Haircut package  for men</h2>
+        <div class="price ">$39.99 per sevice</div>
+
+        <button class="btn">contact Now</button>
+        <p>Includes haircut and styling for a fresh look.</p>
+        <div class="additional-words">
+            <span>haircut & color</span>
+            <span>facial </span>
+            <span>shaving
+                   /trimming</span>
+        </div>
+    </div>
+
+   
+    <div class="card container3">
+        <img src="serviceimg/sallon/children.jpg" alt="Image 2">
+        <h2>Haircut for children </h2>
+        <div class="price">$19.99 per visit</div>
+        <button class="btn">contact Now</button>
+        <p>Get a new hair with stylish cut.</p>
+        <div class="additional-words">
+            <span>haircut </span>
+            <span>balding</span>
+            <span>color </span>
+        </div>
+    </div>
+
+    <div class="card container3">
+        <img src="serviceimg/sallon/women.jpg" alt="Image 2">
+        <h2>Hair style for women</h2>
+        <div class="price">$49.99 per service</div>
+        <button class="btn">contact Now</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="additional-words">
+            <span>haircut</span>
+            <span>color </span>
+            <span>spa ,waxing,facial</span>
+        </div>
+    </div>
+
+
+    <div class="card container3">
+        <img src="serviceimg/sallon/bridegroom.jpg" alt="Image 2">
+        <h2>Style your look for marriage </h2>
+        <div class="price">$79.99per job</div>
+        <button class="btn">contact Now</button>
+        <p>make your advanced look.</p>
+        <div class="additional-words">
+            <span>Bride</span>
+            <span>Groom </span>
+            <span>For Groom and Bride side</span>
+        </div>
+    </div>
+
+
+    <div class="card container3">
+        <img src="serviceimg/sallon/allcut.jpg" alt="Image 2">
+        <h2>only basic haircut</h2>
+        <div class="price">$19.99per job</div>
+        <button class="btn">contact Now</button>
+        <p>make your hair style.</p>
+        <div class="additional-words">
+            <span>men</span>
+            <span>women </span>
+            <span>children </span>
+        </div>
+    </div>
+
+
+   
+</div> 
+
+
+<section class="contact-section container">
+    <div class="contact-map">
+        <!-- Embed map for Odisha, India -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.8017206886686!2d85.83203391457393!3d20.296057086387684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a81cb3d99cf5%3A0x9d0a3ae35d3d9514!2sOdisha!5e0!3m2!1sen!2sin!4v1644486867612!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div class="contact-form" id="form-section" id="click">
+        <h2>Get in Touch</h2>
+        <form action="" method="">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hireButtons = document.querySelectorAll('.hero-button, .btn');
+
+        hireButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const contactForm = document.querySelector('.contact-form');
+                contactForm.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

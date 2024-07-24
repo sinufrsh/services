@@ -1,0 +1,314 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+nav {
+    background-color: rgb(106, 106, 234); /* Background color set to blue */
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px; /* Adjust the height of the logo */
+}
+
+.hamburger-menu {
+    display: none; /* Hide initially for larger screens */
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: right; /* Align menu items to the right */
+}
+
+.menu li {
+    display: inline;
+    margin-left: 20px; /* Adjust the spacing between menu items */
+}
+
+.menu li:first-child {
+    margin-left: 0; /* Remove left margin for the first menu item */
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Hide menu for smaller screens */
+    }
+
+    .hamburger-menu {
+        display: block; /* Display hamburger menu icon for smaller screens */
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+}
+
+
+
+
+
+
+/* Your navbar styles here */
+
+.hero {
+   
+    background-size: cover;
+    position: relative;
+    height: 500px; /* Adjust the height as needed */
+    background-size: cover;
+    background-position: center;
+    animation: slideBackground 30s linear infinite;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    padding-top: 150px; /* Adjust vertical padding to center text */
+}
+
+.hero h1 {
+    font-size: 36px;
+}
+
+
+
+
+
+@keyframes slideBackground {
+    0% {
+        background-image: url('serviceimg/edu/schl1.jpg');
+    }
+    25%{
+        background-image: url('serviceimg/edu/back.jpg');
+    }
+   50% {
+        background-image: url('serviceimg/edu/schl3.jpg');
+    }
+    75% {
+        background-image: url('serviceimg/edu/back.jpg');
+    }
+
+    100% {
+        background-image: url('serviceimg/edu/schl1.jpg');
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .hero {
+        height: 300px; /* Adjusted height for smaller screens */
+    }
+
+    .hero .container {
+        padding-top: 100px; /* Adjusted vertical padding for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Adjusted font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 200px; /* Adjusted height for even smaller screens */
+    }
+
+    .hero .container {
+        padding-top: 50px; /* Adjusted vertical padding for even smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 24px; /* Adjusted font size for even smaller screens */
+    }
+}
+
+
+
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* Adjust as needed */
+    padding-top: 50px;
+    /* Add space at the top */
+}
+
+.child-container {
+    width: 80%;
+    /* Adjust width as needed */
+    text-align: left;
+    margin-top: 20px;
+    /* Add space at the top */
+}
+
+.child-container img {
+    width: 100%;
+    /* Make the image take full width of the container */
+    display: block;
+    /* Ensure proper spacing and alignment */
+    margin-bottom: 20px;
+    /* Add some space below the image */
+}
+
+.introduction {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .child-container {
+        width: 90%;
+        /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .child-container {
+        width: 95%;
+        /* Adjust width for even smaller screens */
+    }
+}
+
+@media (min-width: 992px) {
+    .child-container {
+        width: 60%;
+        /* Adjust width for larger screens */
+    }
+}
+
+.slider-container {
+    margin-bottom: 30px;
+}
+
+.slider-container h2 {
+    margin-bottom: 10px;
+}
+
+.slider {
+    
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    
+   
+    /*  */
+  
+}
+
+.slide {
+    flex: 0 0 auto;
+    width: 100%;
+    display: none;
+}
+
+
+
+.slider img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+   
+  
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Ensure the slider doesn't exceed the screen width */
+    height: auto; /* Automatically adjust the height based on the aspect ratio of the images */
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    33.33% {
+        transform: translateX(0);
+    }
+    66.66% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+.slider-container .slide {
+    animation: slide 9s linear infinite;
+}
+
+.slider-container:hover .slide {
+    animation-play-state: paused;
+}
+
+/* Media query for adjusting slider dimensions on smaller screens */
+@media (max-width: 768px) {
+    .slider-container {
+        height: auto; /* Adjust height automatically */
+    }
+    .slide {
+        height: 100%; /* Ensure the image covers the entire slider height */
+    }
+}
+
+
+
+
+
+
+
+
+

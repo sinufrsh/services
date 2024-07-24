@@ -1,0 +1,248 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    font-family: "Roboto", sans-serif;
+}
+:root {
+    --main-color:#2288ff;
+    --second-color:#192f6a;
+    --text-color:#314862;
+    --bg-color:#fff;
+
+    --box-shadow:2px 2px 18px rgba(14 52 54 / 15%);
+}
+img{
+    width: 100%;
+}
+a{
+    text-decoration: none
+}
+.container{
+    max-width: 1060px;
+    margin: auto;
+    width: 100%;
+}
+section{
+    padding: 3rem 0 2rem ;
+}
+
+header{
+    position: relative;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: #e7c9b0;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #e1dbd2;
+}
+.logo{
+    font-size: 1.3rem;
+    line-height: 1.2rem;
+    padding: 0 2px;
+    border: 2px solid rgb(213, 80, 32);
+    font-weight: 500;
+    color: aliceblue;
+    background: black;
+    text-transform: uppercase;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+.nav-link{
+    font-size: .9rem;
+    font-weight: 700;
+    color: black;
+    text-transform: uppercase;
+}
+.nav-link:hover{
+    color: orangered;
+    transition: .3s;
+}
+.sign-up,.mobile-sign-up{
+    font-size: .9rem;
+    font-weight: 600;
+    padding:8px 16px;
+    background: black;
+    color: whitesmoke;
+    text-transform: uppercase;
+
+}
+.sign-up:hover,
+.mobile-sign-up:hover{
+background: orangered;
+transition: .3s;
+}
+.mobile-sign-up{
+    display: none;
+}
+.menu-icon{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    cursor: pointer;
+    z-index: 100;
+    transition: .3s;
+}
+.menu-icon div{
+    display: block;
+    background: black;
+    height: 2px;
+    width: 25px;
+    transition: .3s;
+}
+.move .line1{
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+.move .line2{
+   opacity: 0;
+}
+.move .line3{
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+.home{
+    padding-top: 7rem !important;
+    background: #e7c9b0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+.home h1{
+    font-family: "Racing Sans One", sans-serif;
+    font-size: 5rem;
+    line-height: 4rem;
+    background: rgb(238, 227, 227);
+}
+.home-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.home-data{
+    display: grid;
+    gap:1.5rem
+}
+.home-box{
+    display: grid;
+    gap:4px
+}
+.home-box h3{
+    font-size: .9rem;
+}
+.home-box h2{
+    font-size: 1rem;
+    color: rgb(215, 50, 50);
+    text-transform: uppercase;
+}
+.border-home{
+    padding: 10px;
+    border-bottom: 1px solid #e1dbd2;
+}
+.home-img{
+    max-width: 650px;
+    width: 100%;
+    
+}
+.home-btns{
+   
+    display: flex;
+    justify-content: center;
+    gap:10px
+}
+.home-btns a{
+    display: flex;
+    align-items: center;
+    gap:4px;
+    padding: 10px 14px;
+    font-size: .9rem;
+     font-weight: 600;
+     color: black;
+     text-transform: uppercase;
+
+}
+.home-btns i{
+    font-size: 20px;
+}
+.dealer-btn{
+    background: yellow;
+}
+
+.properties{
+    background: #fbfbfb;
+    border-radius: 2rem;
+}
+
+
+.heading h2{
+    position: relative;
+   margin-bottom: 20px;
+    text-align: center;
+}
+
+.properties-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 3rem;
+    padding: 0 50px;
+}
+.properties-container .box{
+    background: var(--bg-color);
+    padding: 10px;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    
+}
+.properties-container .box:hover{
+    transform: translateY(-20px);
+    transition: 0.5s;
+}
+.properties-container .box img{
+    border-radius: 1rem;
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
+}
+.properties-container .box h3{
+    font-size:1rem;
+    font-weight: 600;
+    float: right;
+}
+.properties-container .box .content{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.properties-container .box .content .icons{
+    /* display: flex; */
+    align-items: center;
+    column-gap: 1rem;
+}
+.properties-container .box .content .icon .bx{
+    
+    align-items: center;
+    font-size: 20px;
+}
+.properties-container .box .content .icon span{
+    font-size: 50px;
+    font-weight: 500;
+    margin-left: 4px;
+}
+
+
+
+

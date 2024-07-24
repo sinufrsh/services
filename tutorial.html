@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+nav {
+    background-color: rgb(106, 106, 234); 
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px; /* Adjust the height of the logo */
+}
+
+.hamburger-menu {
+    display: none; /* Hide initially for larger screens */
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: right; /* Align menu items to the right */
+}
+
+.menu li {
+    display: inline;
+    margin-left: 20px; /* Adjust the spacing between menu items */
+}
+
+.menu li:first-child {
+    margin-left: 0; /* Remove left margin for the first menu item */
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Hide menu for smaller screens */
+    }
+
+    .hamburger-menu {
+        display: block; /* Display hamburger menu icon for smaller screens */
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+}
+  /* Style for parent container */
+  .parent-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping of elements */
+    justify-content: space-between; /* Space between items */
+  }
+
+  /* Style for registration form container */
+  .registration-form {
+    width: calc(50% - 20px); /* Take 50% width of parent container with space between */
+    padding-right: 20px; /* Add space between form and image */
+    box-sizing: border-box;
+    display: none; /* Hide initially */
+  }
+
+  /* Style for input fields */
+  .registration-form input[type="text"],
+  .registration-form input[type="email"],
+  .registration-form input[type="number"],
+  .registration-form input[type="file"]
+   {
+    width: 100%; /* Take full width of parent container */
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Style for image container */
+  .image-container {
+    width: calc(50% - 20px);
+    /* width: 50%; Take 50% width of parent container */
+    height: auto;
+    overflow: hidden; /* Hide overflowing content */
+  }
+
+  /* Style for image */
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+  }
+
+  /* Style for buttons */
+  .button {
+    margin-bottom: 10px; /* Add space below the submit button */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Style for switch button */
+  .switch-button {
+    margin-top: 10px; /* Add space above the switch button */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .parent-container {
+        flex-direction: column; /* Change to column layout for smaller screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+    .registration-form, .image-container {
+        width: 100%; /* Take full width on smaller screens */
+        margin-bottom: 20px; /* Add space between elements */
+    }
+}
+
+</style>
+</head>
+<body>
+ 
+
+    <nav>
+        <div class="container">
+            <div class="navbar-header">
+                <div class="logo">
+                    <img src="serviceimg/edu/logo.png"  alt="Logo">
+                </div>
+                <div class="hamburger-menu" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <ul class="menu" id="menu">
+                <li><a href="education.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#" onclick="toggleMenu()">About</a></li>
+                <li><a href="tutorial.html" onclick="toggleMenu()">HomeTutorial</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+<div class="parent-container">
+  <!-- Student Registration Form -->
+  <div class="registration-form" id="student-form" style="display: block;">
+    <h2>Student Registration Form</h2>
+    <form>
+        <input type="text" placeholder="Student Name" required>
+        <input type="text" placeholder="Adress" required>
+        <input type="number" placeholder="Phone Number" required>
+       
+        <input type="email" placeholder="Student Email" required>
+        <input type="text" placeholder="School Name" required>
+        <input type="text" placeholder="class" required>
+      <button type="submit" class="button">Submit</button>
+    </form>
+  </div>
+
+  <!-- Teacher Registration Form -->
+  <div class="registration-form" id="teacher-form">
+    <h2>Teacher Registration Form</h2>
+    <form>
+        <input type="text" placeholder="Teacher Name" required>
+        <input type="text" placeholder="Adress" required>
+        <input type="number" placeholder="Phone Number" required>
+        <input type="email" placeholder="Teacher Email" required>
+        <input type="text" placeholder="Higher Education" required>
+        <h2>Higher Education certificate Upload</h2> <input type="file" placeholder="Higher Education" required>
+      <button type="submit" class="button">Submit</button>
+    </form>
+  </div>
+
+  <!-- Image container for student -->
+  <div class="image-container" id="student-image-container">
+    <img class="image" src="serviceimg/edu/student.jpg" alt="Student Image">
+  </div>
+
+  <!-- Image container for teacher -->
+  <div class="image-container" id="teacher-image-container" style="display: none;">
+    <img class="image" src="serviceimg/edu/teacher.jpg" alt="Teacher Image">
+  </div>
+</div>
+
+<!-- Switch button -->
+<button class="switch-button parent-container" onclick="toggleForm()">Switch to Teacher Registration Form</button>
+
+<script>
+//    for menu
+function toggleMenu() {
+        var menu = document.getElementById("menu");
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
+        }
+    }
+    // for form
+  function toggleForm() {
+    var studentForm = document.getElementById('student-form');
+    var teacherForm = document.getElementById('teacher-form');
+    var switchButton = document.querySelector('.switch-button');
+    var studentImageContainer = document.getElementById('student-image-container');
+    var teacherImageContainer = document.getElementById('teacher-image-container');
+
+    if (studentForm.style.display === 'none') {
+      studentForm.style.display = 'block';
+      teacherForm.style.display = 'none';
+      switchButton.textContent = 'Switch to Teacher Registration Form';
+      studentImageContainer.style.display = 'block';
+      teacherImageContainer.style.display = 'none';
+    } else {
+      studentForm.style.display = 'none';
+      teacherForm.style.display = 'block';
+      switchButton.textContent = 'Switch to Student Registration Form';
+      studentImageContainer.style.display = 'none';
+      teacherImageContainer.style.display = 'block';
+    }
+  }
+</script>
+
+</body>
+</html>
+

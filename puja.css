@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  font-family: 'poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: #ffffff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #e1dbd2;
+}
+
+.logo {
+  font-size: 1.3rem;
+  line-height: 1.2rem;
+  padding: 0 2px;
+  border: 2px solid rgba(212, 235, 1, 0.893);
+  font-weight: 500;
+  color: aliceblue;
+  background: black;
+  text-transform: uppercase;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: .9rem;
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+}
+
+.sign-up,
+.mobile-sign-up {
+  font-size: .9rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: black;
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+
+.mobile-sign-up {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 5px;
+  cursor: pointer;
+  z-index: 100;
+  transition: .3s;
+}
+
+.menu-icon div {
+  display: block;
+  background: black;
+  height: 2px;
+  width: 25px;
+  transition: .3s;
+}
+
+.move .line1 {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.move .line2 {
+  opacity: 0;
+}
+
+.move .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+      display: flex;
+  }
+
+  .navbar {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background: #e7c9b0;
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .navbar.active {
+      display: flex;
+  }
+
+  .nav-link {
+      margin-top: 1rem;
+      font-size: 1rem;
+  }
+
+  .sign-up,
+  .mobile-sign-up {
+      display: none;
+  }
+
+  .home h1 {
+      font-size: 3rem;
+      line-height: 3rem;
+  }
+
+  .home-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+  }
+}
+.container {
+  max-width: 1060px;
+  margin: auto;
+  width: 90%; /* Adjusted for responsiveness */
+}
+
+/* body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+} */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  width: 100%;
+  height: 42rem;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #eac7aa;
+  margin-top: 15px ;
+
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+ 
+}
+.fa-whatsapp{
+  display: flex;
+  position: relative;
+  top: 2px;
+  left: 5px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  
+}
+
+.card-image {
+  
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+
+  /* width: 100px;
+  height: 100px; */
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.card-text p {
+  margin-bottom: 1px;
+  text-align: center;
+ 
+  
+}
+.card-text{
+  position: relative;
+  left: auto;
+  flex:1;
+ 
+}
+
+.card-text span{
+  color: orangered
+}
+.line {
+  margin: 0 auto;
+  border: 1px solid #b99a9a;
+  width: 80%;
+}
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  margin-left: 100px;
+  justify-content: space-between;
+}
+
+.left-text, .right-text {
+  width: calc(50% - 10px); /* Adjust width as needed */
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+  /* display: flex;
+  gap: 200px;
+  margin-left: 200px; */
+  padding: 10px;
+  
+}
+button {
+  padding: 10px 200px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+    
+}
+.book-now{
+  background-color: orangered;
+}
+.whatsapp{
+  background-color: rgb(27, 232, 27);
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+
+ @media (max-width: 768px) {
+  .card{
+    height: 52rem;
+  }
+  .card-header {
+      flex-direction: column;
+      align-items: center;
+  }
+  .card-image {
+      margin-bottom: 10px;
+  }
+  .button-container {
+      display: flex;
+      justify-content: center;
+  }
+  .book-now, .whatsapp {
+      margin-right: 5px;
+      
+        margin-right: 10px;
+        font-size: 14px; 
+        padding: 8px 16px;
+      
+  }
+} 
+
+@media (max-width: 480px) {
+  .card{
+    height: 40rem;
+    
+  }
+  .card-image {
+      width: 200px; 
+      height: 200px;
+      margin-right: 10px; /* Decrease margin for smaller screens */
+  }
+  .card-text {
+      font-size: 14px; /* Decrease font size for smaller screens */
+  }
+  .button-container {
+      padding: 5px; /* Decrease padding for smaller screens */
+  }
+  
+}
+
+
+
+
+.button{
+   padding: 10px 0;
+   
+  border-radius: 35px;
+  background-color: #0657ad;
+  color: #fff;
+  cursor: pointer;
+  width: 400px;
+  height: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+.button:hover{
+  color: #6091c5;
+  color: black;
+}
+.button span{
+  color: rgba(206, 115, 231, 0.667);
+}
+
+
+
+
+
+
+
+.container1 {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color:  #eac7aa;
+  border: 2px dashed orangered; /* Border style and color */
+  border-radius: 50px; /* Border radius */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center; /* Center text */
+}
+
+.child-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.child-container .form-group {
+  margin-bottom: 20px;
+}
+
+.child-container .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.child-container .form-group select,
+.child-container .form-group input[type="text"],
+.child-container .form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  background-color:orangered;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+      padding: 10px;
+  }
+  .child-container {
+      max-width: 100%;
+  }
+}

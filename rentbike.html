@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rent bike</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            scroll-padding-top: 2rem;
+            font-family: "Roboto", sans-serif;
+        }
+
+        :root {
+            --main-color: #2288ff;
+            --second-color: #192f6a;
+            --text-color: #314862;
+            --bg-color: #fff;
+            --box-shadow: 2px 2px 18px rgba(14 52 54 / 15%);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .container {
+            max-width: 1060px;
+            margin: auto;
+            width: 90%; /* Adjusted for responsiveness */
+        }
+
+        section {
+            padding: 3rem 0 2rem;
+        }
+
+        header {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: #e7c9b0;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid #e1dbd2;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            line-height: 1.2rem;
+            padding: 0 2px;
+            border: 2px solid rgb(213, 80, 32);
+            font-weight: 500;
+            color: aliceblue;
+            background: black;
+            text-transform: uppercase;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            column-gap: 1.5rem;
+        }
+
+        .nav-link {
+            font-size: .9rem;
+            font-weight: 700;
+            color: black;
+            text-transform: uppercase;
+        }
+
+        .sign-up,
+        .mobile-sign-up {
+            font-size: .9rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            background: black;
+            color: whitesmoke;
+            text-transform: uppercase;
+        }
+
+        .mobile-sign-up {
+            display: none;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 5px;
+            cursor: pointer;
+            z-index: 100;
+            transition: .3s;
+        }
+
+        .menu-icon div {
+            display: block;
+            background: black;
+            height: 2px;
+            width: 25px;
+            transition: .3s;
+        }
+
+        .move .line1 {
+            transform: rotate(-45deg) translate(-5px, 5px);
+        }
+
+        .move .line2 {
+            opacity: 0;
+        }
+
+        .move .line3 {
+            transform: rotate(45deg) translate(-5px, -5px);
+        }
+
+        .home {
+            /* padding-top: 7rem !important; */
+            background: #e7c9b0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .home h1 {
+            font-family: "Racing Sans One", sans-serif;
+            font-size: 5rem;
+            line-height: 4rem;
+            background: rgb(238, 227, 227);
+        }
+
+        .home-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap; /* Added for responsiveness */
+        }
+
+        .home-data {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .home-box {
+            display: grid;
+            gap: 4px;
+        }
+
+        .home-box h3 {
+            font-size: .9rem;
+        }
+
+        .home-box h2 {
+            font-size: 1rem;
+            color: rgb(215, 50, 50);
+            text-transform: uppercase;
+        }
+
+        .border-home {
+            padding: 10px;
+            border-bottom: 1px solid #e1dbd2;
+        }
+
+        .home-img {
+            max-width: 650px;
+            width: 100%;
+        }
+
+        .home-btns {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .home-btns a {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 10px 14px;
+            font-size: .9rem;
+            font-weight: 600;
+            color: black;
+            text-transform: uppercase;
+        }
+
+        .home-btns i {
+            font-size: 20px;
+        }
+
+        .dealer-btn {
+            background: yellow;
+        }
+
+        .properties {
+            background: #fbfbfb;
+            border-radius: 2rem;
+        }
+
+        .heading h2 {
+            position: relative;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .properties-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+            gap: 3rem;
+            padding: 0 2rem; /* Adjusted for responsiveness */
+        }
+
+        .properties-container .box {
+            background: var(--bg-color);
+            padding: 10px;
+            border-radius: 1rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .properties-container .box:hover {
+            transform: translateY(-20px);
+            transition: 0.5s;
+        }
+
+        .properties-container .box img {
+            border-radius: 1rem;
+            max-height: 300px; /* Adjusted for responsiveness */
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .properties-container .box h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            float: right;
+        }
+
+        .properties-container .box .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .properties-container .box .content .icons {
+            align-items: center;
+            column-gap: 1rem;
+        }
+
+        .properties-container .box .content .icon .bx {
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .properties-container .box .content .icon span {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-left: 4px;
+        }
+        @media screen and (max-width: 768px) {
+            .menu-icon {
+                display: flex;
+            }
+
+            .navbar {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #e7c9b0;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar.active {
+                display: flex;
+            }
+
+            .nav-link {
+                margin-top: 1rem;
+                font-size: 1rem;
+            }
+
+            .sign-up,
+            .mobile-sign-up {
+                display: none;
+            }
+
+            .home h1 {
+                font-size: 3rem;
+                line-height: 3rem;
+            }
+
+            .home-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+        </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav container">
+            <a href="#" class="logo">Rent--Bike</a>
+            <div class="navbar">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#bikes" class="nav-link">Bikes</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                 <a href="#rent" class="nav-link">Rent now</a> 
+                <a href="#" class="mobile-sign-up">Sign Up</a>
+            </div>
+            <a href="#" class="sign-up">Sign Up</a>
+            <div class="menu-icon">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <h1 class="home-title ">Best Bike Rent</h1>
+        <div class="home-content container">
+            <div class="home-data">
+                <div class="home-box border-home">
+                    <h3>Stylish motor</h3>
+                    <h2>Revelation</h2>
+                </div>
+
+                <div class="home-box border-home">
+                    <h3>Torque</h3>
+                    <h2>86 Ft-lb</h2>
+                </div>
+                <div class="home-box">
+                    <h3>Horsepower</h3>
+                    <h2>105 Hp / X78 kw</h2>
+                </div>
+            </div>
+            <img src="serviceimg/bike/home.jpg" alt="" class="home-img">
+        </div>
+        <div class="home-btns">
+            <!-- <a href="#" class="dealer-btn"><i class="ri-compass-3-line"></i>Find a dealer</a> -->
+            <a href="#" class="ride-btn"><i class="ri-motorbike-line"></i>Test Ride</a>
+        </div>
+    </section>
+
+
+
+    <section class="properties container" id="bikes">
+        <div class="heading">
+
+            <h2>Our bikes</h2>
+
+        </div>
+        <div class="properties-container container">
+            <div class="box">
+                <img src="serviceimg/bike/bike1.jpg "  onclick="window.location.href='bikeform.html'" alt="">
+                <h3>$2/hour</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3>Bike:FZS</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-bed'><span>click for</span></i>
+                        <br>
+                        <div class="bx bx-bath"><span> Rent</span></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="box">
+                <img src="serviceimg/bike/bike2.jpg"   onclick="window.location.href='bikeform.html'" alt="">
+                <h3>$10/hour</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3>yahma</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-bed'><span>click for</span></i>
+                        <br>
+                        <div class="bx bx-bath"><span> Rent</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="serviceimg/bike/bike3.jpg"   onclick="window.location.href='bikeform.html'" alt="">
+                <h3>$9/hour</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3> duke 200</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-bed'><span>click for</span></i>
+                        <br>
+                        <div class="bx bx-bath"><span> Rent</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="serviceimg/bike/bike4.jpg" onclick="window.location.href='bikeform.html'"  alt="">
+                <h3>$5/hour</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3> electric Bike</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-bed'><span>click for</span></i>
+                        <br>
+                        <div class="bx bx-bath"><span> Rent</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="serviceimg/bike/bike5.jpg"  onclick="window.location.href='bikeform.html'"  alt="">
+                <h3>$2/hour</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3> bajaj CT</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <i class='bx bx-bed'><span>click for</span></i>
+                        <br>
+                        <div class="bx bx-bath"><span> Rent</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="serviceimg/bike/bike7.jpg"   onclick="window.location.href='bikeform.html'" alt="">
+                <h3>$1/hour</h3>
+                <div class="content">
+                    <div class="text">
+                        <h3>honda shine</h3>
+                        <p>Brahmapur</p>
+                        <p>odisha</p>
+                    </div>
+                    <div class="icon">
+                        <span>click for</span>
+                        <br>
+                       <span> Rent</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        const menuBtn = document.querySelector(".menu-icon");
+        const navbar = document.querySelector(".navbar");
+
+        menuBtn.addEventListener("click", () => {
+            navbar.classList.toggle("active");
+            menuBtn.classList.toggle("move");
+        });
+    </script>
+    
+
+
+    
+</body>
+
+</html>
